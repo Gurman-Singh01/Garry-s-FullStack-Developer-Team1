@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML,CSS,JS | GARRY'S DEVELOPERS TEAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>    
+  <HEADER> <center>
+    <h1>-GARRY'S FULL STACK DEVELOPERS TEAM- Presents</h1>
+    <h3>OWNER:-GURMAN SINGH</h3>
+    </center>
+    </HEADER>
+  <div class="container">
+    <form class="login-form" id="loginForm">
+      <h2>Login for Garry's Developers Team Site</h2>
+      <input type="text" id="username" placeholder="userame" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p id="message"></p>
+    </form>
+  </div>
+<script type="text/javascript">
+prompt("Enter your name");
+alert("Welcome to Garry's Full Stack Developers Team");
+confirm("Are you enjoying our free online site ?");
+console.log("Hello Developers!");
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  // Save to localStorage (temporary local record)
+  const userRecord = { username, password, time: new Date().toLocaleString() };
+
+  // Store array of records
+  let records = JSON.parse(localStorage.getItem('loginRecords')) || [];
+  records.push(userRecord);
+  localStorage.setItem('loginRecords', JSON.stringify(records));
+
+  document.getElementById('message').textContent = "Login recorded successfully ✅ ";
+
+  // Optional: clear fields
+  document.getElementById('loginForm').reset();
+});
+
+</script>
+
+
+<footer>
+<hr style="color: rgb(10, 10, 10);"><br><center>
+@Garry's Full Stack Developer Team  PVT.LTD © 2025 All Rights Reserved.<br><br>
+For more info visit: https://fullstack-reach-maker.lovable.app <br><br>
+Reach us at: gurmansingh01@myyahoo.com , +91-9991980620 <br><hr></center>
+
+</footer>
+
+</body>
+
+</html>
